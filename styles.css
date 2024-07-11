@@ -1,0 +1,35 @@
+:root {
+    --white: #fff;
+
+    --primary-background-color: #f8e8e3;
+    
+    --primary-color: #ee856d;
+    --accent-color: #dd8b72;
+    
+    --link-color: #1d9fce;
+    --link-hover-color: #a52ba2;
+
+    --text-color: #ecb9a9;
+    --secondary-text: #dfdddb;
+    
+    --input-background: #fef5f3;
+    
+    --decoration-color: #93ccaf;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    place-content: center;
+    place-items: center;
+    background-color: var(--primary-background-color);
+    padding: 100px 40px;
+}
+
+.content {
+    background-color: var(--white);
+    flex-grow: 1;
+    max-width: 1024px;
+    height: 100%;
+}
