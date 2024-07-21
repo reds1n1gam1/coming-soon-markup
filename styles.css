@@ -37,6 +37,7 @@ body {
 }
 
 .content {
+    position: relative;
     background-color: var(--white);
     flex-grow: 1;
     max-width: 1024px;
@@ -126,6 +127,27 @@ body {
 }
 
 .bottom-text {
+    position: relative;
+    width: 100%;
     font-size: 14px;
     color: var(--secondary-text);
+}
+
+.bottom-text::before,
+.bottom-text::after {
+    content: '';
+    height: 1px;
+    width: calc(50% - 40px);
+    position: absolute;
+    background-color: var(--secondary-text);
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.bottom-text::before {
+    left: -32px;
+}
+
+.bottom-text::after {
+    right: -32px;
 }
