@@ -26,6 +26,29 @@ body {
     color: var(--text-color);
 }
 
+body::after,
+body::before {
+    content:'';
+    width: 350px;
+    height: 350px;
+    position: fixed;
+    background-image: url('/leaf.png');
+    background-size: contain;
+    z-index: 1;
+    background-repeat: no-repeat;
+}
+
+body:before {
+    top: 200px;
+    left: -100px;    
+}
+
+body:after {
+    bottom: 200px;
+    right: -100px;
+    transform: scale(-1, 1);
+}
+
 .container {
     width: 100vw;
     height: 100vh;
