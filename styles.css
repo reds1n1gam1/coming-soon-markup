@@ -1,5 +1,6 @@
 :root {
     --white: #fff;
+    --black: #848484;
 
     --primary-background-color: #f8e8e3;
 
@@ -41,4 +42,90 @@ body {
     max-width: 1024px;
     height: 100%;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 64px 32px;
+}
+
+.title,
+.text {
+    margin-bottom: 16px;
+}
+
+.title h1 {
+    font-size: 96px;
+    font-weight: 800;
+    margin-bottom: 16px;
+}
+
+.title span {
+    color: var(--accent-color);
+}
+
+.subtitle h2 {
+    font-size: 32px;
+    text-transform: uppercase;
+    font-weight: 200;
+    letter-spacing: 16px;
+}
+
+.subtitle span {
+    color: var(--accent-color);
+}
+
+.text {
+    color:  var(--black);
+}
+
+.field {
+    margin-bottom: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+
+.field__input {
+    border: initial;
+    background-color: var(--input-background);
+    color: var(--black);
+    font-size: 14px;
+    border-radius: 4px 0 0 4px;
+    padding: 12px 24px;
+    flex-grow: 2;
+}
+
+.field__input:focus,
+.field__input:focus-within,
+.field__input:focus-visible,
+.field__input:active {
+    border: initial;
+    outline: initial;
+}
+
+.field__button {
+    background-color: var(--primary-color);
+    color: var(--input-background);
+    font-size: 14px;
+    border: initial;
+    border-radius: 0 4px 4px 0;
+    padding: 12px 24px;
+}
+
+.links {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 48px;
+    margin-bottom: 32px;
+}
+
+.links__item {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.bottom-text {
+    font-size: 14px;
+    color: var(--secondary-text);
 }
