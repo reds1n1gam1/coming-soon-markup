@@ -24,17 +24,18 @@ body {
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
+    font-size: var(--font-size, 14px);
     font-style: normal;
     color: var(--text-color);
 }
 
 body::after,
 body::before {
-    content:'';
-    width: 350px;
-    height: 350px;
+    content: "";
+    width: var(--leaf-size, 350px);
+    height: var(--leaf-size, 350px);
     position: fixed;
-    background-image: url('/leaf.png');
+    background-image: url("/leaf.png");
     background-size: contain;
     z-index: 1;
     background-repeat: no-repeat;
@@ -72,6 +73,7 @@ body:after {
     text-align: center;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     padding: 64px 32px;
 }
@@ -82,7 +84,7 @@ body:after {
 }
 
 .title h1 {
-    font-size: 96px;
+    font-size: var(--title-large, 56px);
     font-weight: 800;
     margin-bottom: 16px;
 }
@@ -92,7 +94,7 @@ body:after {
 }
 
 .subtitle h2 {
-    font-size: 32px;
+    font-size: var(--title-medium, 18px);
     text-transform: uppercase;
     font-weight: 200;
     letter-spacing: 16px;
@@ -103,7 +105,7 @@ body:after {
 }
 
 .text {
-    color:  var(--black);
+    color: var(--black);
 }
 
 .field {
@@ -162,7 +164,7 @@ body:after {
 
 .bottom-text::before,
 .bottom-text::after {
-    content: '';
+    content: "";
     height: 1px;
     width: calc(50% - 40px);
     position: absolute;
@@ -180,7 +182,7 @@ body:after {
 }
 
 @keyframes leaf {
-    30%  {
+    30% {
         transform: translate(var(--animation-translate-value));
     }
 
@@ -194,7 +196,7 @@ body:after {
 }
 
 @keyframes leaf-2 {
-    30%  {
+    30% {
         transform: scale(-1, 1) translate(var(--animation-translate-value));
     }
 
@@ -204,5 +206,34 @@ body:after {
 
     100% {
         transform: scale(-1, 1) translate(0);
+    }
+}
+
+@media screen and (max-width: 1023.98px) {
+    :root {
+        --leaf-size: 200px;
+    }
+    
+    .field {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .field__input,
+    .field__button {
+        width: 100%;
+    }
+
+    .links {
+        grid-auto-flow: row;
+        gap: 12px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    :root {
+        --title-large: 96px;
+        --title-medium: 32px;
+        --font-size: 16px;
     }
 }
