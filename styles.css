@@ -16,6 +16,8 @@
     --input-background: #fef5f3;
 
     --decoration-color: #93ccaf;
+
+    --animation-translate-value: 10px;
 }
 
 body {
@@ -40,13 +42,15 @@ body::before {
 
 body:before {
     top: 200px;
-    left: -100px;    
+    left: -100px;
+    animation: leaf 5s infinite linear;
 }
 
 body:after {
     bottom: 200px;
     right: -100px;
     transform: scale(-1, 1);
+    animation: leaf-2 5s infinite linear 1s;
 }
 
 .container {
@@ -173,4 +177,32 @@ body:after {
 
 .bottom-text::after {
     right: -32px;
+}
+
+@keyframes leaf {
+    30%  {
+        transform: translate(var(--animation-translate-value));
+    }
+
+    60% {
+        transform: translate(-var(--animation-translate-value));
+    }
+
+    100% {
+        transform: translate(0);
+    }
+}
+
+@keyframes leaf-2 {
+    30%  {
+        transform: scale(-1, 1) translate(var(--animation-translate-value));
+    }
+
+    60% {
+        transform: scale(-1, 1) translate(-var(--animation-translate-value));
+    }
+
+    100% {
+        transform: scale(-1, 1) translate(0);
+    }
 }
